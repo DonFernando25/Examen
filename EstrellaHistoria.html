@@ -44,16 +44,20 @@
     </header>
    
     <style>
+      .image-box, .text-box {
+          height: 300px; 
+      }
+  
       .image-box {
-          background-color: #111111; 
-          padding: 100px; 
+          border: 2px solid rgb(10, 10, 10); 
+          padding: 0px; 
           border-radius: 5px; 
-          margin-bottom: 5px; 
+          overflow: hidden; /* Para que la imagen se ajuste correctamente */
       }
   
       .text-box {
-          background-color: rgb(248, 199, 1) ; 
-          padding: 50px; 
+          background-color: rgb(248, 199, 1); 
+          padding: 30px; 
           border-radius: 5px; 
       }
   
@@ -62,40 +66,52 @@
       }
   
       .image-box img {
-          max-width: 100%; 
+          width: 100%; /* Ajustar el ancho de la imagen al contenedor */
+          height: auto; /* Ajustar automáticamente la altura de la imagen */
       }
   </style>
 
     <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/equipo.jpg" class="img-fluid" alt="Imagen"> 
-                </div>
-                <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam rem tempora, unde ut molestias nesciunt non facere soluta nostrum illo, excepturi laudantium? Vel recusandae optio dignissimos ea praesentium nisi qui?</p> <!-- Agrega tu texto aquí -->
-                </div>
-            </div>
-        </div><br>
+        <h1><center>Historia del Club</center></h1>
         
+
+        
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="image-box">
+                      <img src="img/equipo.jpg" class="img-fluid" alt="Imagen">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="text-box">
+                      <p>Fundado en 1960 en el barrio de Macul, en Santiago de Chile, el Club Deportivo Estrellas de Macul surgió de la pasión de un grupo de jóvenes por el fútbol. Con el tiempo, se convirtió en un referente deportivo en la región, destacando por su estilo de juego y espíritu de equipo. Además de triunfos en la cancha, el club ha sido un motor de desarrollo en la comunidad, promoviendo la inclusión social y el deporte entre los jóvenes. Hoy en día, sigue siendo un símbolo de unidad y orgullo comunitario en Macul.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
         
         
 
         <div class="container">
           <div class="row">
-              <div class="col-md-6">
-                  <div class="image-box">
-                      <img src="img/hinchada.jpg" class="img-fluid" alt="Imagen"> <!-- Ajusta la ruta de la imagen y agrega la clase "img-fluid" para que la imagen sea responsive -->
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="text-box">
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti nostrum debitis voluptates. Natus voluptatem animi, nihil iste voluptatibus harum, laboriosam odit eligendi id nam veniam voluptates similique adipisci tempore illum!</p> <!-- Agrega tu texto aquí -->
-                  </div>
+            <div class="col-md-6">
+              <div class="text-box">
+                  <p>La hinchada del Club Deportivo Estrellas de Macul es conocida cariñosamente como "La Constelación". Surgió de manera espontánea en los primeros años del club, cuando un grupo de vecinos y aficionados se reunía en las gradas improvisadas para apoyar a su equipo local.
+
+                    Lo que empezó como un puñado de personas entusiastas pronto se convirtió en una verdadera familia. Los miembros de La Constelación compartían un vínculo único, unidos por su amor incondicional al equipo y por el orgullo de representar a su barrio en cada partido.</p>
               </div>
           </div>
+              <div class="col-md-6">
+                  <div class="image-box">
+                      <img src="img/hinchada.jpg" class="img-fluid" alt="Imagen">
+                  </div>
+              </div>
+              
+          </div>
       </div>
-
+      
     </main>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
