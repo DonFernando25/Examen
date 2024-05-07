@@ -5,110 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header>
-        
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <style>
-                .navbar {
-                  background-color: rgb(248, 199, 1) !important;
-                }
-              </style>
-            <img src="img/estrella.png" alt="" width="64" height="64" >
-            Club Estrella de Macul</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="EstrellaMacul.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="EstrellaPlantel.html">Plantel</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="EstrellaHistoria.html">Historia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="EstrellaTienda.html">Tienda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="EstrellaFormulario.html">Abono</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <style>
+                        .navbar {
+                            background-color: rgb(248, 199, 1) !important;
+                        }
+                    </style>
+                    <img src="img/estrella.png" alt="" width="64" height="64">
+                    Club Estrella de Macul
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="EstrellaMacul.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EstrellaPlantel.html">Plantel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EstrellaHistoria.html">Historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EstrellaTienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EstrellaFormulario.html">Abono</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <style>
-        .card-img-top {
-            width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
-            height: 300px; /* Ajusta automáticamente la altura para mantener la proporción */
-        }
-    </style>
+  
     <main>
+      
+
+        <h1><center>Plantel 2024</center></h1><br>
 
         
+
+        <div class="text-center mb-3">
+          <button class="btn btn-warning mx-2" onclick="mostrarArqueros()">Porteros</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarDefensas()">Defensas</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarMediocampistas()">Mediocampistas</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarDelanteros()">Delanteros</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarCuerpoTecnico()">Cuerpo Técnico</button>
+      </div>
+
         
-        <h1><center>Plantel 2024</center> </h1>
 
-        <div class="row">
-            <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="img/donra.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><center>Donraldinho</center></h5>
-              <p class="card-text"><center>20 años</center></p>
-              <p class="card-text"><center>Delantero</center></p>
-              <div class="text-center"> <!-- Agregamos la clase text-center -->
-                
+        <div class="container text-center">
+
+          
+            <div id="arqueros"  class="row">
+              <h2>Arqueros</h2><br>           
+            </div><br>
+
+            
+            <div id="defensas" class="row">
+              <h2>Defensas</h2><br>
+            </div><br>
+
+            
+            <div id="mediocampistas" class="row">
+              <h2>Mediocampistas</h2><br>
+            </div><br>
+
+            
+            
+            <div id="delanteros" class="row">
+              <h2>Delantero</h2><br>
+          </div><br>
+
+            
+
+            
+
+            
+            <div id="cuerpoTecnico" class="row">
+              <h2>Cuerpo Tecnico</h2><br>
             </div>
-            </div>
-          </div>
+
+
         </div>
-
-          <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img src="img/mezi.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><center>Leo Messi</center></h5>
-              <p class="card-text"><center>36 años</center></p>
-              <p class="card-text"><center>Delantero</center></p>
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img src="img/ronaldo.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><center>Ronaldo</center></h5>
-                <p class="card-text"><center>39 años</center></p>
-                <p class="card-text"><center>Delantero</center></p>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img src="img/buffon.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><center>Buffon</center></h5>
-                <p class="card-text"><center>46 años</center></p>
-                <p class="card-text"><center>Portero</center></p>
-                
-              </div>
-            </div>
-          </div>
-
     </main>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/jugadores.js"></script>
+    
+    <script>
+        
+    </script>
 </body>
 </html>
