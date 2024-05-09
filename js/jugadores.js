@@ -26,7 +26,7 @@ const jugadoresDelanteros = [
     { nombre: "Donraldinho", edad: "20 años",profesion:"" , imagen: "img/donra.png" },
     { nombre: "Leo Messi", edad: "36 años",profesion:"" , imagen: "img/mezi.png" },
     { nombre: "Ronaldo", edad: "39 años",profesion:"" , imagen: "img/ronaldo.png" },
-    { nombre: "Castolo", edad: "48 años", profesion:"" ,imagen: "img/mina.png" },
+    { nombre: "Castolo", edad: "48 años", profesion:"" ,imagen: "img/cas.png" },
 ];
 
 const jugadoresCuerpoTecnico = [
