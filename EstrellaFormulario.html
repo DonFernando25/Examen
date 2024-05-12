@@ -47,86 +47,131 @@
 
     </header>
     <main>
-        <h1><center>Abono Temporada 2024</center></h1>
-        
-        <form>
-            <div class="form-group">
-              <label for="nombres">Nombres</label>
-              <input type="text" class="form-control" id="nombres" name="nombres" required minlength="3" placeholder="Ingrese sus nombres" >
-            </div>
-            <div class="form-group">
-              <label for="apellidos">Apellidos </label>
-              <input type="text" class="form-control" id="apellidos" name="apellidos" required minlength="3" placeholder="Ingrese sus apellidos">
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Correo electronico </label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Numero Contacto </label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="912345678">
-            </div>
-          </form><br>
-
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Seleccione la categoria del Abono</option>
+      <h1><center>Abono Temporada 2024</center></h1>
+      
+      <form id="abonoForm" onsubmit="return validarFormulario()" class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres" required minlength="3" placeholder="Ingrese sus nombres">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" required minlength="3" placeholder="Ingrese sus apellidos">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="correo">Correo electrónico</label>
+                      <input type="email" class="form-control" id="correo" name="correo" required placeholder="name@example.com">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="numero">Número de contacto</label>
+                      <input type="tel" class="form-control" id="numero" name="numero" required placeholder="912345678">
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+          </div>
+          <select class="form-select mb-3" aria-label="Default select example">
+            <option selected>Seleccione la categoría del Abono</option>
             <option value="1">Abono Bronce</option>
             <option value="2">Abono Plata</option>
             <option value="3">Abono Oro</option>
-          </select> <br>
+          </select>
+          <br>
+          <button type="submit" class="btn btn-primary">Enviar Datos</button>
+      </form>
 
-          <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Enviar Datos
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Abono 2024</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Los Datos escritos son correctos
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No,Regresar</button>
-          <button type="button" class="btn btn-primary">Si,Enviar</button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Abono 2024</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Los Datos escritos son correctos
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Regresar</button>
+              <button type="button" class="btn btn-primary">Si, Enviar</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-    </main>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="validaciones.js"></script>
-    <script>
-        function validarFormulario() {
-            var nombres = document.getElementById('nombres').value;
-            var apellidos = document.getElementById('apellidos').value;
+  </main>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+      function validarFormulario() {
+          var nombres = document.getElementById('nombres').value;
+          var apellidos = document.getElementById('apellidos').value;
+          var correo = document.getElementById('correo').value;
+          var numero = document.getElementById('numero').value;
+          var fechaNacimiento = document.getElementById('fechaNacimiento').value;
 
-            if (!validarNombres(nombres)) {
-                alert("El nombre no es válido.");
-                return false;
-            }
+          if (!validarNombres(nombres)) {
+              alert("El nombre no es válido.");
+              return false;
+          }
 
-            if (!validarApellidos(apellidos)) {
-                alert("El apellido no es válido.");
-                return false;
-            }
+          if (!validarApellidos(apellidos)) {
+              alert("El apellido no es válido.");
+              return false;
+          }
 
-            // Puedes agregar más validaciones aquí
+          if (!validarCorreo(correo)) {
+              alert("El correo no es válido.");
+              return false;
+          }
 
-            return true;
-        }
+          if (!validarNumero(numero)) {
+              alert("El número de contacto no es válido.");
+              return false;
+          }
 
-        function enviarFormulario() {
-            alert("Formulario enviado correctamente.");
-            document.getElementById("abonoForm").reset();
-        }
-    </script>
+          if (!validarFechaNacimiento(fechaNacimiento)) {
+              alert("La fecha de nacimiento no es válida.");
+              return false;
+          }
+
+          // Puedes agregar más validaciones aquí
+
+          return true;
+      }
+
+      function validarNombres(nombres) {
+          return nombres.length >= 3;
+      }
+
+      function validarApellidos(apellidos) {
+          return apellidos.length >= 3;
+      }
+
+      function validarCorreo(correo) {
+          // Esta es una validación simple, puedes utilizar expresiones regulares para validar correos más complejos
+          return correo.includes("@");
+      }
+
+      function validarNumero(numero) {
+          // Puedes agregar más validaciones según tus requisitos
+          return numero.length >= 9;
+      }
+
+      function validarFechaNacimiento(fecha) {
+          // Puedes agregar validaciones específicas para la fecha de nacimiento
+          return true;
+      }
+  </script>
 </body>
 </html>
