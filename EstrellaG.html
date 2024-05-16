@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/pushbar.css">
 </head>
 <body>
     <header>
@@ -117,15 +118,38 @@
                 <button type="button" class="btn btn-outline-primary">Talla Única</button>
                 
               </div>
-              <center><button type="button" class="btn btn-warning">Comprar</button></center>
+              <center><button type="button" class="btn btn-warning" data-pushbar-target="right">Comprar</button></center>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
+    <aside data-pushbar-id="right" data-pushbar-direction="right">
+      <div type="button" class="btn-close"><button data-pushbar- ></button></div><br>
+      <div class="titulo"><span data-pushbar-close class="close push_right"></span> <center>Carrito de compras</center></div><hr>
+      <div class="item">
+        <img src="img/gorro3.png" alt="" style="max-width: 100px; height: auto; ">
+        <div class="textos"> 
+          <p class="nombre-item" style="margin: 20px;">Gorro</p>
+          <p style="margin: 20px;">$15.000</p>
+        </div><hr>
+        <center><p><button type="button" class="btn btn-dark" >comprar </button></p></center>
+      </div>
+    </aside>
+
 </main>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/pushbar.js"></script>
+    <script type="text/javascript">
+      const pushbar = new Pushbar({
+        blur: true,
+        overlay: true,
+      });
+    </script>
 </body>
 <footer style="background-color: black;">
    <a href="EstrellaFormulario.html"style="color: rgb(255, 230, 0);">Trabaja con nosotros</a>
