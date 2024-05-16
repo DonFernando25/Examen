@@ -12,7 +12,7 @@
 <body>
 
   <aside data-pushbar-id="right" data-pushbar-direction="right">
-    <div type="button" class="btn-close"><button data-pushbar- ></button></div><br>
+    <div type="button" class="btn-close"><button data-pushbar-close></button></div><br>
 		<div class="titulo"><span data-pushbar-close class="close push_right"></span> <center>Carrito de compras</center></div><hr>
     <div class="item">
       <img src="img/camiseta.png" alt="" style="max-width: 100px; height: auto;">
@@ -20,7 +20,23 @@
         <p class="nombre-item">Camiseta Local</p>
         <p>$35.000</p>
       </div><hr>
-      <center><p><button type="button" class="btn btn-warning">comprar </button></p></center>
+      <center><p><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">comprar </button></p></center>
+      
+
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Desea agregar mas productos</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Si,Agregar</button>
+              <button type="button" class="btn btn-primary">No,Pagar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 	</aside>
 
@@ -75,6 +91,15 @@
   </style>
   
   <main class="pushbar_main_content">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="EstrellaTienda.html">Tienda</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Camiseta L</li>
+      </ol>
+    </nav>
+
+    
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
