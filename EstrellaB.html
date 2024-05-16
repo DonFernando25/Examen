@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/pushbar.css">
 </head>
 <body>
     <header>
@@ -92,7 +93,7 @@
              <!-- segunda parte-->
             <div class="col-md-7">
               <h2>
-                Camiseta Local 2024
+                Bufanda 
               </h2>
               <p>
                 
@@ -104,15 +105,36 @@ La bufanda negra y amarilla del Club Deportivo Estrellas de Macul es un accesori
                 <button type="button" class="btn btn-outline-primary">Talla Única</button>
                 
               </div>
-              <center><button type="button" class="btn btn-warning">Comprar</button></center>
+              <center><button type="button" class="btn btn-warning" data-pushbar-target="right">Comprar</button></center>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <aside data-pushbar-id="right" data-pushbar-direction="right">
+      <div type="button" class="btn-close"><button data-pushbar- ></button></div><br>
+      <div class="titulo"><span data-pushbar-close class="close push_right"></span> <center>Carrito de compras</center></div><br>
+      <div class="item">
+        <img src="img/bufanda.png" alt="" style="max-width: 100px; height: auto;">
+        <div class="textos"> 
+          <p class="nombre-item">Bufanda</p>
+          <p>$10.000</p>
+        </div>
+        <center><p><button type="button" class="btn btn-dark" >comprar </button></p></center>
+      </div>
+    </aside>
+
 </main>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/pushbar.js"></script>
+    <script type="text/javascript">
+      const pushbar = new Pushbar({
+        blur: true,
+        overlay: true,
+      });
+    </script>
 </body>
 <footer style="background-color: black;">
    <a href="EstrellaFormulario.html"style="color: rgb(255, 230, 0);">Trabaja con nosotros</a>
