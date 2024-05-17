@@ -40,7 +40,7 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        margin: 0;
+        margin: 0px;
     }
     
     .content {
@@ -52,4 +52,26 @@
         padding: 10px;
         text-align: center;
     }
+    .form-select {
+        width: 70%; 
+        max-width: 200px; 
+        
+        
+    }
+    .form-control[type="date"] {
+        width: 50%; 
+        max-width: 200px; 
+        padding: 0.375rem 0.75rem; 
+        font-size: 0.875rem; 
+    }
     
+    .custom-margin {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .iframe-container {
+        border: 10px solid #f8c701; 
+        padding: 0px; 
+        display: inline-block; 
+    }
