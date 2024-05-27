@@ -1,0 +1,40 @@
+.go-top-container {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    width: 6.6rem;
+    height: 6.6rem;
+    z-index: -1;
+    margin: 1rem; /* Ajusta el margen según tus necesidades */
+    cursor: pointer;
+    transition: .2s;
+}
+
+.go-top-image {
+    width: 100%; /* Usa el 100% del contenedor padre */
+    height: 100%; /* Usa el 100% del contenedor padre */
+    border-radius: 50%; /* Para hacer la imagen redonda */
+    transition: .2s;
+    transform: scale(0);
+}
+
+.show {
+    z-index: 10;
+}
+
+.show .go-top-image {
+    animation: popup .3s ease-in-out;
+    transform: scale(1);
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

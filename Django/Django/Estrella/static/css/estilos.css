@@ -1,0 +1,54 @@
+
+
+/* ----- ----- Pushbar: Carrito de Compras ----- ----- */
+.pushbar.pushbar-right{
+	background-color: black;
+	width: 365px;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.pushbar-right .titulo{
+
+	font-size: 232px;
+}
+
+.pushbar-right .item{
+
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0;
+	border-bottom: 1px solid black;
+}
+
+/* ----- ----- Pushbar: Productos ----- ----- */
+
+/* ----- ----- Pushbar: Formulario Newsletter  ----- ----- */
+
+/* ------------------------- */
+/* MEDIA QUERIES */
+/* ------------------------- */
+@media screen and (max-width: 600px) {
+	header h1 {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	header h2 {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	main nav .banner {
+		font-size: 14px;
+	}
+
+	main .productos {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	main .productos figure {
+		margin-bottom: 40px;
+	}
+}
