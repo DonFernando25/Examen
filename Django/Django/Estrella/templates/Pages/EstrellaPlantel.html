@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★Plantel★</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gotop.css' %}">
+    
+    
+
+</head>
+
+<body>
+    {% include 'base/header.html'%}
+
+    <main>
+      
+
+        <h1><center>Plantel 2024</center></h1><br>
+
+        
+
+        <div class="text-center mb-3">
+          <button class="btn btn-warning mx-2" onclick="mostrarArqueros()">Porteros</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarDefensas()">Defensas</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarMediocampistas()">Mediocampistas</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarDelanteros()">Delanteros</button>
+          <button class="btn btn-warning mx-2" onclick="mostrarCuerpoTecnico()">Cuerpo Técnico</button>
+      </div>
+
+        
+
+        <div class="container text-center">
+
+          
+            <div id="arqueros"  class="row">
+              <h2>Arqueros</h2><br>           
+            </div><br>
+
+            
+            <div id="defensas" class="row">
+              <h2>Defensas</h2><br>
+            </div><br>
+
+            
+            <div id="mediocampistas" class="row">
+              <h2>Mediocampistas</h2><br>
+            </div><br>
+
+            
+            
+            <div id="delanteros" class="row">
+              <h2>Delantero</h2><br>
+          </div><br>
+
+            
+
+            
+
+            
+        <div id="cuerpoTecnico" class="row">
+             <h2>Cuerpo Tecnico</h2><br>
+        </div>
+
+
+        </div>
+    </main><br>
+
+    <script>
+        const urls = {
+            buffon: "{% static 'img/buffon.png' %}",
+            lev: "{% static 'img/lev.png' %}",
+            iva: "{% static 'img/iva.png' %}",
+            val: "{% static 'img/val.png' %}",
+            jar: "{% static 'img/jar.png' %}",
+            str: "{% static 'img/str.png' %}",
+            dod: "{% static 'img/dod.png' %}",
+            iou: "{% static 'img/iou.png' %}",
+            esp: "{% static 'img/esp.png' %}",
+            xim: "{% static 'img/xim.png' %}",
+            mina: "{% static 'img/mina.png' %}",
+            donra: "{% static 'img/donra.png' %}",
+            mezi: "{% static 'img/mezi.png' %}",
+            ronaldo: "{% static 'img/ronaldo.png' %}",
+            cas: "{% static 'img/cas.png' %}",
+            gua: "{% static 'img/gua.png' %}",
+            mou: "{% static 'img/mou.png' %}",
+            js: "{% static 'img/js.png' %}"
+        };
+    </script>
+
+
+
+
+    {% include 'base/footer.html'%}
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/functions.js'%}"></script>
+    <script src="{% static 'js/jugadores.js'%}"></script>
+    <script src="{% static 'js/gotop.js'%}"></script>
+    
+    <script>
+        
+    </script>
+</body>
+</html>

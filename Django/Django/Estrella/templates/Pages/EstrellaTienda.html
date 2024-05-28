@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>★Tienda★</title>
+  {% load static %}
+  <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="vh-100 d-flex flex-column">
+  {% include 'base/header.html'%}
+  
+
+  <main>
+    <div class="container"><br>
+      <h1>
+        <center>Tienda Oficial</center>
+      </h1><br>
+
+      <div class="row">
+        
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'img/camiseta.png' %}" class="card-img-top" alt="" width="95" height="300">
+            <div class="card-body">
+              <h5 class="card-title">
+                <center>Camiseta Local</center>
+              </h5>
+              <p class="card-text">
+                <center>$35.000</center>
+              </p>
+              <div class="text-center">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'img/camiseta2.png' %}" class="card-img-top" alt="" width="95" height="300">
+            <div class="card-body">
+              <h5 class="card-title">
+                <center>Camiseta Visita</center>
+              </h5>
+              <p class="card-text">
+                <center>$35.000</center>
+              </p>
+              <div class="text-center">
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'img/gorro3.png' %}" class="card-img-top" alt="" width="95" height="300">
+            <div class="card-body">
+              <h5 class="card-title">
+                <center>Gorro Oficial</center>
+              </h5>
+              <p class="card-text">
+                <center>$15.000</center>
+              </p>
+              <div class="text-center">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'img/bufanda.png' %}" class="card-img-top" alt="" width="95" height="300">
+            <div class="card-body">
+              <h5 class="card-title">
+                <center>Bufanda Oficial</center>
+              </h5>
+              <p class="card-text">
+                <center>$10.000</center>
+              </p>
+              <div class="text-center">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  </main><br>
+  {% include 'base/footer.html'%}
+  
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html> 

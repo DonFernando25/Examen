@@ -5,15 +5,15 @@
     width: 6.6rem;
     height: 6.6rem;
     z-index: -1;
-    margin: 1rem; /* Ajusta el margen según tus necesidades */
+    margin: 1rem; 
     cursor: pointer;
     transition: .2s;
 }
 
 .go-top-image {
-    width: 100%; /* Usa el 100% del contenedor padre */
-    height: 100%; /* Usa el 100% del contenedor padre */
-    border-radius: 50%; /* Para hacer la imagen redonda */
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
     transition: .2s;
     transform: scale(0);
 }

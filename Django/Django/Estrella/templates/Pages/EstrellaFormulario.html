@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>★Abono★</title>
+  {% load static %}
+  <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  
+  {% include 'base/header.html'%}
+  
+    <main>
+      <div class="container"> 
+      <h1><center>Abono Temporada 2024</center></h1>
+      
+      <form id="abonoForm" onsubmit="return validarFormulario()" class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres" required minlength="3" placeholder="Ingrese sus nombres">
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" required minlength="3" placeholder="Ingrese sus apellidos">
+                  </div>
+              </div>
+          </div><br>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="correo">Correo electrónico</label>
+                      <input type="email" class="form-control" id="correo" name="correo" required placeholder="name@example.com">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="numero">Número de contacto</label>
+                      <input type="tel" class="form-control" id="numero" name="numero" required placeholder="912345678">
+                  </div>
+              </div>
+          </div><br>
+
+          <div class="form-group">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+          </div><br>
+
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Categoría del Abono</option>
+            <option value="1">Abono Bronce</option>
+            <option value="2">Abono Plata</option>
+            <option value="3">Abono Oro</option>
+          </select>
+          <br>
+          <button type="submit" class="btn btn-primary">Enviar Datos</button>
+      </form>
+      </main><br>
+      {% include 'base/footer.html'%}
+
+
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script>
+      function validarFormulario() {
+          var nombres = document.getElementById('nombres').value;
+          var apellidos = document.getElementById('apellidos').value;
+          var correo = document.getElementById('correo').value;
+          var numero = document.getElementById('numero').value;
+          var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+
+          if (!validarNombres(nombres)) {
+              alert("El nombre no es válido.");
+              return false;
+          }
+
+          if (!validarApellidos(apellidos)) {
+              alert("El apellido no es válido.");
+              return false;
+          }
+
+          if (!validarCorreo(correo)) {
+              alert("El correo no es válido.");
+              return false;
+          }
+
+          if (!validarNumero(numero)) {
+              alert("El número de contacto no es válido.");
+              return false;
+          }
+
+          if (!validarFechaNacimiento(fechaNacimiento)) {
+              alert("La fecha de nacimiento no es válida.");
+              return false;
+          }
+
+          
+
+          return true;
+      }
+
+      function validarNombres(nombres) {
+          return nombres.length >= 3;
+      }
+
+      function validarApellidos(apellidos) {
+          return apellidos.length >= 3;
+      }
+
+      function validarCorreo(correo) {
+          
+          return correo.includes("@");
+      }
+
+      function validarNumero(numero) {
+          
+          return numero.length >= 9;
+      }
+
+      function validarFechaNacimiento(fecha) {
+          
+          return true;
+      }
+  </script>
+  
+</body>
+
+</html>

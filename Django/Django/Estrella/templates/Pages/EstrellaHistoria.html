@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★Historia★</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  {% include 'base/header.html'%}
+    
+   
+    <style>
+      .image-box, .text-box {
+          height: 300px; 
+      }
+  
+      .image-box {
+          border: 2px solid rgb(10, 10, 10); 
+          padding: 0px; 
+          border-radius: 5px; 
+          overflow: hidden; 
+      }
+  
+      .text-box {
+          background-color: rgb(248, 199, 1); 
+          padding: 30px; 
+          border-radius: 5px; 
+      }
+  
+      .text-box p {
+          margin-bottom: 0; 
+      }
+  
+      .image-box img {
+          width: 100%; 
+          height: auto; 
+      }
+  </style>
+
+    <main>
+
+      <div class="container">
+        <div class="row">
+            <div class="col">
+                <center><h1 class="custom-margin">Historia del Club</h1></center>
+            </div>
+        </div>
+    </div>
+        
+        
+
+        
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="image-box">
+                      <img src="{% static 'img/equipo.jpg' %}" class="img-fluid" alt="Imagen">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="text-box">
+                      <p class="text-justify">Fundado en 1960 en el barrio de Macul, en Santiago de Chile, el Club Deportivo Estrellas de Macul surgió de la pasión de un grupo de jóvenes por el fútbol. Con el tiempo, se convirtió en un referente deportivo en la región, destacando por su estilo de juego y espíritu de equipo. Además de triunfos en la cancha, el club ha sido un motor de desarrollo en la comunidad, promoviendo la inclusión social y el deporte entre los jóvenes. Hoy en día, sigue siendo un símbolo de unidad y orgullo comunitario en Macul.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
+        
+        
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="text-box">
+                  <p>La hinchada del Club Deportivo Estrellas de Macul es conocida cariñosamente como "La Constelación". Surgió de manera espontánea en los primeros años del club, cuando un grupo de vecinos y aficionados se reunía en las gradas improvisadas para apoyar a su equipo local.
+
+                    Lo que empezó como un puñado de personas entusiastas pronto se convirtió en una verdadera familia. Los miembros de La Constelación compartían un vínculo único, unidos por su amor incondicional al equipo y por el orgullo de representar a su barrio en cada partido.</p>
+              </div>
+          </div>
+              <div class="col-md-6">
+                  <div class="image-box">
+                      <img src="{% static 'img/hinchada.jpg' %}" class="img-fluid" alt="Imagen">
+                  </div>
+              </div>
+              
+          </div>
+      </div><br>
+
+      <div class="container">
+        <div class="row">
+            <div class="col">
+                <center><h1 class="custom-margin">Himno del Club</h1></center>
+            </div>
+        </div>
+    </div>
+
+
+    <center>
+      <div class="container">
+          <div class="iframe-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/cDWFhccfFME?si=a9QPzM9Kos4EMNON" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </div>
+  </center>
+      
+    </main> <br>
+    {% include 'base/footer.html'%}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
