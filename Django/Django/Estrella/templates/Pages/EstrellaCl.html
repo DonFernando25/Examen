@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★Tienda★</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pushbar.css' %}">
+    
+  
+    
+</head>
+<body>
+  {% include 'base/header.html'%}
+
+  <aside data-pushbar-id="right" data-pushbar-direction="right">
+    <div type="button" class="btn-close"><button data-pushbar-close></button></div><br>
+		<div class="titulo"><span data-pushbar-close class="close push_right"></span> <center>Carrito de compras</center></div><hr>
+    <div class="item">
+      <img src="img/camiseta.png" alt="" style="max-width: 100px; height: auto;">
+      <div class="textos"> 
+        <p class="nombre-item">Camiseta Local</p>
+        <p>$35.000</p>
+      </div><hr>
+      <center><p><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">comprar </button></p></center>
+      
+
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Desea agregar mas productos</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Si,Agregar</button>
+              <button type="button" class="btn btn-primary">No,Pagar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	</aside>
+
+    
+    <style>
+      
+      .carousel-control-prev-icon, .carousel-control-next-icon {
+          background-color:  rgb(248, 199, 1); 
+      }
+  
+      
+      .carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+          color: rgb(0, 0, 0); 
+      }
+  </style>
+  
+  <main class="pushbar_main_content">
+
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="EstrellaTienda.html">Tienda</a></li>
+      </ol>
+    </nav>
+
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-5">
+              <div id="carouselExampleCaptions" class="carousel slide" style="max-width: 600px;">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/camiseta.png" class="d-block w-100" style="max-height: 600px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/camiseta1.png" class="d-block w-100" style="max-height: 600px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p></p>
+                    </div>
+                  </div>
+                  
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+             
+            <div class="col-md-7">
+              <h2>
+                Camiseta Local 2024
+              </h2>
+              <p>
+                La camiseta de local del Club Deportivo Estrellas de Macul para la temporada 2024 presenta un diseño vibrante y distintivo. Con una base de color amarillo brillante, se destacan audaces rayas negras que atraviesan la parte delantera de la camiseta en un patrón vertical. Este diseño refleja la fuerza y la determinación del equipo, mientras que los colores representan la energía y el espíritu de la comunidad de Macul.
+              </p>
+              
+              <div class="btn-group btn-group-sm" role="group" aria-label="Tallas">
+                <button type="button" class="btn btn-outline-primary">S</button>
+                <button type="button" class="btn btn-outline-primary">M</button>
+                <button type="button" class="btn btn-outline-primary">L</button>
+              </div>
+              <center><button type="button" class="btn btn-warning" data-pushbar-target="right">Comprar</button></center>
+
+              
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+</main>
+
+{% include 'base/footer.html'%}
+<script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'js/pushbar.js'%}"></script>
+
+    
+    <script type="text/javascript" src=""></script>
+	<script type="text/javascript">
+		const pushbar = new Pushbar({
+			blur: true,
+			overlay: true,
+		});
+	</script>
+</body><br>
+
+
+</html>
