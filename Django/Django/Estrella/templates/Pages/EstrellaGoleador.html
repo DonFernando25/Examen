@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★Goleador★</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        .player-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .player-list li {
+            background-color: #f8f9fa;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .player-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .player-table th, .player-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .player-table th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .player-table td {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    {% include 'base/header.html'%}
+
+    
+
+    <main>
+        <div class="container"><br>
+            <h1><center>Tabla de Goleadores</center></h1><br>
+            <table class="player-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Player Name</th>
+                        <th>Team Name</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                        <th>Penalty Goals</th>
+                    </tr>
+                </thead>
+                <tbody id="players">
+                    
+                </tbody>
+            </table>
+        </div>
+    </main><br>
+
+    {% include 'base/footer.html'%}
+
+    
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function (){
+            var $players = $('#players');
+            $.ajax({
+                type: 'GET',
+                url: 'https://apiv2.allsportsapi.com/football/?&met=Topscorers&leagueId=207&APIkey=b4d9f9361460e5344c0d0b2db86756c725520c67d5bfd67321e18a93a9f1b9a1',
+                dataType: 'json',
+                success: function(response) {
+                    if(response.success === 1) {
+                        $.each(response.result, function(i, scorer){
+                            $players.append('<tr>' +
+                                '<td>' + scorer.player_place + '</td>' +
+                                '<td>' + scorer.player_name + '</td>' +
+                                '<td>' + scorer.team_name + '</td>' +
+                                '<td>' + scorer.goals + '</td>' +
+                                '<td>' + (scorer.assists ? scorer.assists : '-') + '</td>' +
+                                '<td>' + scorer.penalty_goals + '</td>' +
+                            '</tr>');
+                        });
+                    } else {
+                        $players.append('<tr><td colspan="6">No data available</td></tr>');
+                    }
+                },
+                error: function() {
+                    $players.append('<tr><td colspan="6">Error loading data</td></tr>');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

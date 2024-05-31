@@ -9,6 +9,7 @@
   <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
 </head>
 
 <body class="vh-100 d-flex flex-column">
@@ -34,8 +35,9 @@
                 <center>$35.000</center>
               </p>
               <div class="text-center">
-               
+                <a href="{% url 'Camloc' %}" class="btn btn-warning" style="color: black;">Comprar </a>
               </div>
+              
             </div>
           </div>
         </div>
@@ -52,6 +54,9 @@
                 <center>$35.000</center>
               </p>
               <div class="text-center">
+                <div class="text-center">
+                  <a href="{% url 'CamVis' %}" class="btn btn-warning" style="color: black;">Comprar </a>
+              </div>
               
               </div>
             </div>
@@ -70,6 +75,9 @@
                 <center>$15.000</center>
               </p>
               <div class="text-center">
+                <div class="text-center">
+                  <a href="{% url 'CamGor' %}" class="btn btn-warning" style="color: black;">Comprar </a>
+              </div>
                 
               </div>
             </div>
@@ -87,6 +95,9 @@
                 <center>$10.000</center>
               </p>
               <div class="text-center">
+                <div class="text-center">
+                  <a href="{% url 'CamBuf' %}" class="btn btn-warning" style="color: black;">Comprar </a>
+              </div>
                 
               </div>
             </div>

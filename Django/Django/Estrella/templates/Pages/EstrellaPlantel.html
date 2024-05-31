@@ -1,109 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>★Plantel★</title>
+    <title>Plantel</title>
     {% load static %}
     <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/gotop.css' %}">
     
-    
-
 </head>
 
 <body>
-    {% include 'base/header.html'%}
-
+    {% include 'base/header.html' %}<br>
     <main>
-      
-
-        <h1><center>Plantel 2024</center></h1><br>
-
-        
 
         <div class="text-center mb-3">
-          <button class="btn btn-warning mx-2" onclick="mostrarArqueros()">Porteros</button>
-          <button class="btn btn-warning mx-2" onclick="mostrarDefensas()">Defensas</button>
-          <button class="btn btn-warning mx-2" onclick="mostrarMediocampistas()">Mediocampistas</button>
-          <button class="btn btn-warning mx-2" onclick="mostrarDelanteros()">Delanteros</button>
-          <button class="btn btn-warning mx-2" onclick="mostrarCuerpoTecnico()">Cuerpo Técnico</button>
+            <a class="btn btn-warning mx-2" href="#arqueros">Porteros</a>
+            <a class="btn btn-warning mx-2" href="#defensas">Defensas</a>
+            <a class="btn btn-warning mx-2" href="#mediocampistas">Mediocampistas</a>
+            <a class="btn btn-warning mx-2" href="#delanteros">Delanteros</a>
+            <a class="btn btn-warning mx-2" href="#cuerpo-tecnico">Cuerpo Técnico</a>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <center><h1 class="custom-margin">Plantel de Jugadores</h1></center>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <!-- Arqueros -->
+                <div id="arqueros" class="col-md-12">
+                    <center><h2>Arqueros</h2></center>
+                </div><br>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/buffon.png' %}" class="card-img-top" alt="Buffon">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Buffon</center></h5>
+                            <p class="card-text"><center>46 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/lev.png' %}" class="card-img-top" alt="Lev Yashin">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Lev Yashin</center></h5>
+                            <p class="card-text"><center>95 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/iva.png' %}" class="card-img-top" alt="Ivarov">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Ivarov</center></h5>
+                            <p class="card-text"><center>47 años</center></p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <!-- Defensas -->
+                <div id="defensas" class="col-md-12">
+                    <center><h2>Defensas</h2></center>
+                </div><br>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/val.png' %}" class="card-img-top" alt="Valeny">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Valeny</center></h5>
+                            <p class="card-text"><center>49 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/jar.png' %}" class="card-img-top" alt="Jaric">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Jaric</center></h5>
+                            <p class="card-text"><center>56 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/str.png' %}" class="card-img-top" alt="Stremer">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Stremer</center></h5>
+                            <p class="card-text"><center>45 años</center></p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <!-- Mediocampistas -->
+                <div id="mediocampistas" class="col-md-12">
+                    <center><h2>Mediocampistas</h2></center>
+                </div><br>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/dod.png' %}" class="card-img-top" alt="Dodo">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Dodo</center></h5>
+                            <p class="card-text"><center>46 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/iou.png' %}" class="card-img-top" alt="Iouga">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Iouga</center></h5>
+                            <p class="card-text"><center>50 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/esp.png' %}" class="card-img-top" alt="Espimas">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Espimas</center></h5>
+                            <p class="card-text"><center>47 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/xim.png' %}" class="card-img-top" alt="Ximelez">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Ximelez</center></h5>
+                            <p class="card-text"><center>47 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/mina.png' %}" class="card-img-top" alt="Minanda">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Minanda</center></h5>
+                            <p class="card-text"><center>52 años</center></p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <!-- Delanteros -->
+                <div id="delanteros" class="col-md-12">
+                    <center><h2>Delanteros</h2></center>
+                </div><br>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/donra.png' %}" class="card-img-top" alt="Donraldinho">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Donraldinho</center></h5>
+                            <p class="card-text"><center>20 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/mezi.png' %}" class="card-img-top" alt="Leo Messi">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Leo Messi</center></h5>
+                            <p class="card-text"><center>36 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/ronaldo.png' %}" class="card-img-top" alt="Ronaldo">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Ronaldo</center></h5>
+                            <p class="card-text"><center>39 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/cas.png' %}" class="card-img-top" alt="Castolo">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Castolo</center></h5>
+                            <p class="card-text"><center>48 años</center></p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <!-- Cuerpo Técnico -->
+                <div id="cuerpo-tecnico" class="col-md-12">
+                    <center><h2>Cuerpo Técnico</h2></center>
+                </div><br>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/gua.png' %}" class="card-img-top" alt="Ent">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Pep Guardiola</center></h5>
+                            <p class="card-text"><center>Entrenador</center></p>
+                            <p class="card-text"><center>53 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/mou.png' %}" class="card-img-top" alt="Ter">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>José Mourinho</center></h5>
+                            <p class="card-text"><center>Entrenador</center></p>
+                            <p class="card-text"><center>61 años</center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="width: 18rem;">
+                      <img src="{% static 'img/js.png' %}" class="card-img-top" alt="Doc">
+                      <div class="card-body">
+                          <h5 class="card-title"><center>Jonathan Sierra</center></h5>
+                          <p class="card-text"><center>Doctor de Campo</center></p>
+                          <p class="card-text"><center>45 años</center></p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="go-top-container">
+          <img src="{% static 'img/estrellita.png' %}" alt="Go to top" class="go-top-image">
       </div>
-
-        
-
-        <div class="container text-center">
-
-          
-            <div id="arqueros"  class="row">
-              <h2>Arqueros</h2><br>           
-            </div><br>
-
-            
-            <div id="defensas" class="row">
-              <h2>Defensas</h2><br>
-            </div><br>
-
-            
-            <div id="mediocampistas" class="row">
-              <h2>Mediocampistas</h2><br>
-            </div><br>
-
-            
-            
-            <div id="delanteros" class="row">
-              <h2>Delantero</h2><br>
-          </div><br>
-
-            
-
-            
-
-            
-        <div id="cuerpoTecnico" class="row">
-             <h2>Cuerpo Tecnico</h2><br>
-        </div>
-
-
-        </div>
+      
     </main><br>
-
-    <script>
-        const urls = {
-            buffon: "{% static 'img/buffon.png' %}",
-            lev: "{% static 'img/lev.png' %}",
-            iva: "{% static 'img/iva.png' %}",
-            val: "{% static 'img/val.png' %}",
-            jar: "{% static 'img/jar.png' %}",
-            str: "{% static 'img/str.png' %}",
-            dod: "{% static 'img/dod.png' %}",
-            iou: "{% static 'img/iou.png' %}",
-            esp: "{% static 'img/esp.png' %}",
-            xim: "{% static 'img/xim.png' %}",
-            mina: "{% static 'img/mina.png' %}",
-            donra: "{% static 'img/donra.png' %}",
-            mezi: "{% static 'img/mezi.png' %}",
-            ronaldo: "{% static 'img/ronaldo.png' %}",
-            cas: "{% static 'img/cas.png' %}",
-            gua: "{% static 'img/gua.png' %}",
-            mou: "{% static 'img/mou.png' %}",
-            js: "{% static 'img/js.png' %}"
-        };
-    </script>
-
-
-
-
-    {% include 'base/footer.html'%}
-    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{% static 'js/functions.js'%}"></script>
-    <script src="{% static 'js/jugadores.js'%}"></script>
-    <script src="{% static 'js/gotop.js'%}"></script>
+    {% include 'base/footer.html' %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/gotop.js' %}"></script>
     
-    <script>
-        
-    </script>
+    
+
 </body>
+
 </html>

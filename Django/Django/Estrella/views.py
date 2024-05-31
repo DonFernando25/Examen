@@ -20,4 +20,19 @@ def page4(request):
 def page5(request):
     return render(request, "Pages/EstrellaFormulario.html")
 
+def page6(request):
+    return render(request, "Pages/EstrellaCl.html")
+
+def page7(request):
+    return render(request, "Pages/EstrellaCv.html")
+
+def page8(request):
+    return render(request, "Pages/EstrellaG.html")
+
+def page9(request):
+    return render(request, "Pages/EstrellaB.html")
+
+def page10(request):
+    return render(request, "Pages/EstrellaGoleador.html")
+
 
