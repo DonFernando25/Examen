@@ -15,4 +15,6 @@ urlpatterns = [
     path("CamGor", views.page8, name="CamGor"),
     path("CamBuf", views.page9, name="CamBuf"),
     path("CamGol", views.page10, name="CamGol"),
+    path("IniSe", views.page11, name="IniSe"),
+    path('registro', views.registro, name='registro'),
 ]

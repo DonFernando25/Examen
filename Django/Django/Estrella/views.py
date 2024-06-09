@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UsuarioForm
 
 # Create your views here.
 
@@ -35,4 +36,18 @@ def page9(request):
 def page10(request):
     return render(request, "Pages/EstrellaGoleador.html")
 
+def page11(request):
+    return render(request, "Pages/EstrellaIS.html")
+
+
+
+def registro(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('IniSe')  
+    else:
+        form = UsuarioForm()
+    return render(request, 'Pages/registro.html', {'form': form})
 

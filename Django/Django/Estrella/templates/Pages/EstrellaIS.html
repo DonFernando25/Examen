@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  {% include 'base/header.html'%}
+
+    <main>
+      <div class="container mt-5">
+        <h1 class="text-center">Inicio de Sesión</h1>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form id="loginForm" class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="username" name="username" required placeholder="Ingrese su nombre de usuario">
+                <div class="invalid-feedback">
+                  Por favor, ingrese su nombre de usuario.
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" required placeholder="Ingrese su contraseña">
+                <div class="invalid-feedback">
+                  Por favor, ingrese su contraseña.
+                </div>
+                    <a  aria-current="page" href="{% url 'Formulario' %}">Crear Cuenta</a>
+              </div>
+              
+              
+              <div class="text-center mt-3">
+                <a href="" class="btn btn-warning" style="color: black;">Iniciar Sesión</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div><br>
+
+      <div class="elementor-widget-container">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div style=" border-radius: 1px; padding: 50px;">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </main><br>
+
+    {% include 'base/footer.html'%}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      // Ejemplo de validación de formulario con Bootstrap
+      (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+
+    </script>
+</body>
+</html>
