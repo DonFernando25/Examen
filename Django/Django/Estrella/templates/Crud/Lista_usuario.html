@@ -32,8 +32,7 @@
                                         <td>{{ usuario.rut }}</td>
                                         <td>{{ usuario.nombre }}</td>
                                         <td>{{ usuario.apellido }}</td>
-                                        <td><a href="{% url 'user_findEdit' pk=usuario.rut %}"><button class="btn btn-warning">Modificar</button></a></td>
-                                        <td><a href="{% url 'user_del' pk=usuario.rut %}"><button class="btn btn-danger">Eliminar</button></a></td>
+                                        
                                     </tr>
                                 {% endfor %}
                             {% else %}

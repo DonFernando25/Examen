@@ -19,8 +19,7 @@ def page3(request):
 def page4(request):
     return render(request, "Pages/EstrellaTienda.html")
 
-def page5(request):
-    return render(request, "Pages/EstrellaFormulario.html")
+
 
 def page6(request):
     return render(request, "Pages/EstrellaCl.html")
@@ -40,9 +39,9 @@ def page10(request):
 def page11(request):
     return render(request, "Pages/EstrellaIS.html")
 
-def user_add(request):
+def page5(request):
     if request.method != "POST":
-        return render(request, "pages/EstrellaIS.html")
+        return render(request, "pages/EstrellaFormulario.html")
     else:
         rut = request.POST["rut"]
         nombre = request.POST["nombre"]
@@ -67,7 +66,7 @@ def user_add(request):
         context = {
             "mensaje": "Registro Exitoso",
         }
-        return render(request, "pages/EstrellaIS.html", context)
+        return render(request, "pages/EstrellaFormulario.html", context)
     
 
 
