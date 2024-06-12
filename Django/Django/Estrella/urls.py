@@ -16,5 +16,6 @@ urlpatterns = [
     path("CamBuf", views.page9, name="CamBuf"),
     path("CamGol", views.page10, name="CamGol"),
     path("IniSe", views.page11, name="IniSe"),
-    path('registro', views.registro, name='registro'),
+    path('LisUs', views.lista_usuario, name='LisUs'),
+    
 ]

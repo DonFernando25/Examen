@@ -18,7 +18,13 @@
     <div class="container mt-5">
       <h1 class="text-center">Registro</h1><br>
       
-      <form id="registroForm" onsubmit="return validarFormulario()" class="container">
+      <form id="registroForm" action="{% url 'Formulario' %}" method="POST" class="container">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="rut">Rut</label>
+          <input type="text" class="form-control" id="rut" name="rut" required minlength="8" maxlength="9" placeholder="Ingrese su Rut">
+        </div><br>
+
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" class="form-control" id="nombre" name="nombre" required minlength="3" placeholder="Ingrese su nombre">
@@ -53,9 +59,9 @@
           <label for="genero">Género</label>
           <select class="form-select" id="genero" name="genero" required>
             <option selected disabled value="">Seleccione su género</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="O">Otro</option>
           </select>
         </div><br>
 
@@ -69,6 +75,7 @@
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <script>
     function validarFormulario() {
+      var rut = document.getElementById('rut').value;
       var nombre = document.getElementById('nombre').value;
       var apellido = document.getElementById('apellido').value;
       var nombreUsuario = document.getElementById('nombreUsuario').value;
@@ -76,6 +83,11 @@
       var contrasena = document.getElementById('contrasena').value;
       var fechaNacimiento = document.getElementById('fechaNacimiento').value;
       var genero = document.getElementById('genero').value;
+
+      if (!validarRUT(rut)) {
+        alert("El RUT no es válido.");
+        return false;
+      }
 
       if (!validarNombre(nombre)) {
         alert("El nombre no es válido.");
@@ -114,6 +126,11 @@
 
       return true;
     }
+
+
+    function validarRUT(rut) {
+      return rut.length >= 8 && rut.length <= 9;
+  }
 
     function validarNombre(nombre) {
       return nombre.length >= 3;

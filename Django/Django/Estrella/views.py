@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import UsuarioForm
+from django.contrib import messages
+from .models import Usuario
 
 # Create your views here.
 
@@ -39,15 +40,43 @@ def page10(request):
 def page11(request):
     return render(request, "Pages/EstrellaIS.html")
 
-
-
-def registro(request):
-    if request.method == 'POST':
-        form = UsuarioForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('IniSe')  
+def user_add(request):
+    if request.method != "POST":
+        return render(request, "pages/EstrellaIS.html")
     else:
-        form = UsuarioForm()
-    return render(request, 'Pages/registro.html', {'form': form})
+        rut = request.POST["rut"]
+        nombre = request.POST["nombre"]
+        apellido = request.POST["apellido"]
+        nombre_usuario = request.POST["nombreUsuario"]
+        correo = request.POST["correo"]
+        contrasena = request.POST["contrasena"]
+        fecha_nacimiento = request.POST["fechaNacimiento"]
+        genero = request.POST["genero"]
+
+        obj = Usuario.objects.create(
+            rut=rut,
+            nombre=nombre,
+            apellido=apellido,
+            nombre_usuario=nombre_usuario,
+            correo=correo,
+            contrasena=contrasena,
+            fecha_nacimiento=fecha_nacimiento,
+            genero=genero,
+        )
+        obj.save()
+        context = {
+            "mensaje": "Registro Exitoso",
+        }
+        return render(request, "pages/EstrellaIS.html", context)
+    
+
+
+def lista_usuario(request):
+    usuarios = Usuario.objects.all()
+    context = {
+        'usuarios': usuarios,
+    }
+    return render(request, 'Crud/Lista_usuario.html', context)    
+
+
 
