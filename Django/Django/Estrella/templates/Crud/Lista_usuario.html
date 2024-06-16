@@ -27,12 +27,13 @@
                         </thead>
                         <tbody>
                             {% if usuarios %}
-                                {% for usuario in usuarios %}
+                                {% for tmp in usuarios %}
                                     <tr>
-                                        <td>{{ usuario.rut }}</td>
-                                        <td>{{ usuario.nombre }}</td>
-                                        <td>{{ usuario.apellido }}</td>
-                                        
+                                        <td>{{ tmp.rut }}</td>
+                                        <td>{{ tmp.nombre }}</td>
+                                        <td>{{ tmp.apellido }}</td>
+                                        <td><a href="{% url 'user_findEdit' pk=tmp.rut%}"><button
+                                            class="btn btn-warning">Modificar</button></a></td>
                                     </tr>
                                 {% endfor %}
                             {% else %}

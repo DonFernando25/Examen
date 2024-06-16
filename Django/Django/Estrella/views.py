@@ -78,4 +78,46 @@ def lista_usuario(request):
     return render(request, 'Crud/Lista_usuario.html', context)    
 
 
+def user_findEdit(request, pk):
+    if pk != "":
+        usuario = Usuario.objects.get(rut=pk)
+        context = {
+            "usuario": usuario,
+        }
+        return render(request, "Crud/editar_usuario.html", context)
+    else:
+        usuarios = Usuario.objects.all()
+        context = {
+            "mensaje": "Error, Rut no encontrado",
+            "usuarios": usuarios,
+        }
+        return render(request, "Crud/Lista_usuario.html", context)
 
+def user_update(request):
+    if request.method == "POST":
+        rut = request.POST["rut"]
+        nombre = request.POST["nombre"]
+        apellido = request.POST["apellido"]
+        nombre_usuario = request.POST["nombreUsuario"]
+        correo = request.POST["correo"]
+        contrasena = request.POST["contrasena"]
+        fecha_nacimiento = request.POST["fechaNacimiento"]
+        genero = request.POST["genero"]
+
+        usuario = Usuario.objects.get(rut=rut)
+        usuario.nombre = nombre
+        usuario.apellido = apellido
+        usuario.nombre_usuario = nombre_usuario
+        usuario.correo = correo
+        usuario.contrasena = contrasena
+        usuario.fecha_nacimiento = fecha_nacimiento
+        usuario.genero = genero
+        usuario.save()
+
+        context = {
+            "mensaje": "Modificado con Exito",
+            "usuario": usuario,
+        }
+        return render(request, "Crud/editar_usuario.html", context)
+    else:
+        return redirect("Lista_Usuarios")

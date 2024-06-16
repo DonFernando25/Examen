@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar Usuario</title>
+  {% load static %}
+  <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  {% include 'base/header.html'%}
+
+  <main>
+    <div class="container mt-5">
+      <h1 class="text-center">Modificar Usuario</h1><br>
+      
+      <form id="editForm" action="{% url 'EdUs' %}" method="POST" class="container">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="rut">Rut</label>
+          <input type="text" class="form-control" id="rut" name="rut" value="{{ usuario.rut }}" readonly>
+        </div><br>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" value="{{ usuario.nombre }}" required minlength="3">
+        </div><br>
+
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" value="{{ usuario.apellido }}" required minlength="3">
+        </div><br>
+
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre de Usuario</label>
+          <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" value="{{ usuario.nombre_usuario }}" required minlength="3">
+        </div><br>
+
+        <div class="form-group">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" class="form-control" id="correo" name="correo" value="{{ usuario.correo }}" required>
+        </div><br>
+
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" name="contrasena" value="{{ usuario.contrasena }}" required minlength="6">
+        </div><br>
+
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" value="{{ usuario.fecha_nacimiento|date:'Y-m-d' }}" required>
+        </div><br>
+
+        <div class="form-group">
+          <label for="genero">Género</label>
+          <select class="form-select" id="genero" name="genero" required>
+            <option value="M" {% if usuario.genero == 'M' %}selected{% endif %}>Masculino</option>
+            <option value="F" {% if usuario.genero == 'F' %}selected{% endif %}>Femenino</option>
+            <option value="O" {% if usuario.genero == 'O' %}selected{% endif %}>Otro</option>
+          </select>
+        </div><br>
+
+        <button type="submit" class="btn btn-warning">Modificar Registro</button><br>
+        <a href="{% url 'LisUs' %}">
+          <button type="button" class="btn btn-primary mt-3">Volver</button>
+        </a>
+      </form>
+    </div>
+  </main><br>
+
+  {% include 'base/footer.html'%}
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

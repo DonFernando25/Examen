@@ -17,5 +17,7 @@ urlpatterns = [
     path("CamGol", views.page10, name="CamGol"),
     path("IniSe", views.page11, name="IniSe"),
     path('LisUs', views.lista_usuario, name='LisUs'),
+    path("user_findEdit/<str:pk>", views.user_findEdit, name="user_findEdit"),
+    path("EdUs", views.user_update, name="EdUs"),
     
 ]
