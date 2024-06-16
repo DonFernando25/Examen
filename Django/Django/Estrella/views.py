@@ -77,6 +77,25 @@ def lista_usuario(request):
     }
     return render(request, 'Crud/Lista_usuario.html', context)    
 
+def user_del(request, pk):
+    try:
+        usuario = Usuario.objects.get(rut=pk)
+        usuario.delete()
+
+        usuarios = Usuario.objects.all()
+        context = {
+            "mensaje": "Registro Eliminado",
+            "usuarios": usuarios,
+        }
+        return render(request, "Crud/Lista_usuario.html", context)
+    except Usuario.DoesNotExist:
+        usuarios = Usuario.objects.all()
+        context = {
+            "mensaje": "Error, Rut no encontrado...",
+            "usuarios": usuarios,
+        }
+        return render(request, "Crud/Lista_usuario.html", context)
+
 
 def user_findEdit(request, pk):
     if pk != "":
