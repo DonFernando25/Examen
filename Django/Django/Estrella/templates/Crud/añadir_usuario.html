@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>★Registro★</title>
+  {% load static %}
+  <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    {% include 'base/hadmin.html' %}<br>
+  
+  <main>
+    <div class="container mt-5">
+      <h1 class="text-center">Registro Usuario</h1><br>
+      
+      <form id="registroForm" action="{% url 'adduser' %}" method="POST" class="container">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="rut">Rut</label>
+          <input type="text" class="form-control" id="rut" name="rut" required minlength="8" maxlength="9" placeholder="Ingrese su Rut">
+        </div><br>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required minlength="3" placeholder="Ingrese su nombre">
+        </div><br>
+
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" required minlength="3" placeholder="Ingrese su apellido">
+        </div><br>
+
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre de Usuario</label>
+          <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required minlength="3" placeholder="Ingrese su nombre de usuario">
+        </div><br>
+
+        <div class="form-group">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" class="form-control" id="correo" name="correo" required placeholder="name@example.com">
+        </div><br>
+
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" name="contrasena" required minlength="6" placeholder="Ingrese su contraseña">
+        </div><br>
+
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+        </div><br>
+
+        <div class="form-group">
+          <label for="genero">Género</label>
+          <select class="form-select" id="genero" name="genero" required>
+            <option selected disabled value="">Seleccione su género</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="O">Otro</option>
+          </select>
+        </div><br>
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+    </div>
+  </main><br>
+
+  {% include 'base/footer.html'%}
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script>
+    function validarFormulario() {
+      var rut = document.getElementById('rut').value;
+      var nombre = document.getElementById('nombre').value;
+      var apellido = document.getElementById('apellido').value;
+      var nombreUsuario = document.getElementById('nombreUsuario').value;
+      var correo = document.getElementById('correo').value;
+      var contrasena = document.getElementById('contrasena').value;
+      var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+      var genero = document.getElementById('genero').value;
+
+      if (!validarRUT(rut)) {
+        alert("El RUT no es válido.");
+        return false;
+      }
+
+      if (!validarNombre(nombre)) {
+        alert("El nombre no es válido.");
+        return false;
+      }
+
+      if (!validarApellido(apellido)) {
+        alert("El apellido no es válido.");
+        return false;
+      }
+
+      if (!validarNombreUsuario(nombreUsuario)) {
+        alert("El nombre de usuario no es válido.");
+        return false;
+      }
+
+      if (!validarCorreo(correo)) {
+        alert("El correo no es válido.");
+        return false;
+      }
+
+      if (!validarContrasena(contrasena)) {
+        alert("La contraseña no es válida.");
+        return false;
+      }
+
+      if (!validarFechaNacimiento(fechaNacimiento)) {
+        alert("La fecha de nacimiento no es válida.");
+        return false;
+      }
+
+      if (!validarGenero(genero)) {
+        alert("Seleccione un género.");
+        return false;
+      }
+
+      return true;
+    }
+
+
+    function validarRUT(rut) {
+      return rut.length >= 8 && rut.length <= 9;
+  }
+
+    function validarNombre(nombre) {
+      return nombre.length >= 3;
+    }
+
+    function validarApellido(apellido) {
+      return apellido.length >= 3;
+    }
+
+    function validarNombreUsuario(nombreUsuario) {
+      return nombreUsuario.length >= 3;
+    }
+
+    function validarCorreo(correo) {
+      return correo.includes("@");
+    }
+
+    function validarContrasena(contrasena) {
+      return contrasena.length >= 6;
+    }
+
+    function validarFechaNacimiento(fechaNacimiento) {
+      return true;
+    }
+
+    function validarGenero(genero) {
+      return genero !== "";
+    }
+  </script>
+</body>
+
+</html>

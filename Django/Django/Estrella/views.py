@@ -176,3 +176,32 @@ def lista_productos(request):
     productos = Producto.objects.all()
     context = {'productos': productos}
     return render(request, 'Crud/Lista_productos.html', context)
+
+def adduser(request):
+    if request.method != "POST":
+        return render(request, "Crud/añadir_usuario.html")
+    else:
+        rut = request.POST["rut"]
+        nombre = request.POST["nombre"]
+        apellido = request.POST["apellido"]
+        nombre_usuario = request.POST["nombreUsuario"]
+        correo = request.POST["correo"]
+        contrasena = request.POST["contrasena"]
+        fecha_nacimiento = request.POST["fechaNacimiento"]
+        genero = request.POST["genero"]
+
+        obj = Usuario.objects.create(
+            rut=rut,
+            nombre=nombre,
+            apellido=apellido,
+            nombre_usuario=nombre_usuario,
+            correo=correo,
+            contrasena=contrasena,
+            fecha_nacimiento=fecha_nacimiento,
+            genero=genero,
+        )
+        obj.save()
+        context = {
+            "mensaje": "Registro Exitoso",
+        }
+        return render(request, "Crud/Lista_usuario.html", context)
