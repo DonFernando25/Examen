@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+</head>
+<body>
+    {% include 'base/hadmin.html' %}<br>
+    <div class="container mt-5">
+        <h1 class="text-center">Editar Producto</h1><br>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div><br>
+    {% include 'base/footer.html' %}
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+</body>
+</html>

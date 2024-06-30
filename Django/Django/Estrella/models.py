@@ -27,3 +27,21 @@ class Usuario(models.Model):
     
     def __str__(self):
         return f"{self.nombre} {self.apellido} ({self.nombre_usuario})"
+    
+
+
+
+class Producto(models.Model):
+    id_producto = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
+    categoria = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    stock_talla_s = models.PositiveIntegerField(default=0)
+    stock_talla_m = models.PositiveIntegerField(default=0)
+    stock_talla_l = models.PositiveIntegerField(default=0)
+    stock_talla_xl = models.PositiveIntegerField(default=0)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    fotografia = models.ImageField(upload_to='productos/')
+
+    def __str__(self):
+        return self.nombre

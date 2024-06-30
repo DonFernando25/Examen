@@ -20,5 +20,8 @@ urlpatterns = [
     path("Eliminar_Usuario/<str:pk>/", views.user_del, name="user_del"),
     path("user_findEdit/<str:pk>", views.user_findEdit, name="user_findEdit"),
     path("EdUs", views.user_update, name="EdUs"),
-    
+    path('añadir_producto', views.añadir_producto, name='añadir_producto'),
+    path('editar_producto/<str:pk>/', views.editar_producto, name='editar_producto'),
+    path('Eliminar_Producto/<str:pk>/', views.producto_eliminar, name='prod_del'),
+    path('LisPro', views.lista_productos, name='LisPro'),
 ]

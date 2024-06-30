@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Usuario
+from .models import Producto
+from .forms import ProductoForm
 
 # Create your views here.
 
@@ -17,9 +19,8 @@ def page3(request):
     return render(request, "Pages/EstrellaHistoria.html")
 
 def page4(request):
-    return render(request, "Pages/EstrellaTienda.html")
-
-
+    productos = Producto.objects.all()
+    return render(request, 'Pages/EstrellaTienda.html', {'productos': productos})
 
 def page6(request):
     return render(request, "Pages/EstrellaCl.html")
@@ -140,3 +141,38 @@ def user_update(request):
         return render(request, "Crud/editar_usuario.html", context)
     else:
         return redirect("Lista_Usuarios")
+    
+
+
+def añadir_producto(request):
+    if request.method == "POST":
+        form = ProductoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('LisPro')
+    else:
+        form = ProductoForm()
+    return render(request, 'Crud/añadir_producto.html', {'form': form})
+
+
+
+def editar_producto(request, pk):
+    producto = get_object_or_404(Producto, id_producto=pk)
+    if request.method == "POST":
+        form = ProductoForm(request.POST, request.FILES, instance=producto)
+        if form.is_valid():
+            form.save()
+            return redirect('LisPro')
+    else:
+        form = ProductoForm(instance=producto)
+    return render(request, 'Crud/editar_producto.html', {'form': form})
+
+def producto_eliminar(request, pk):
+    producto = Producto.objects.get(id_producto=pk)
+    producto.delete()
+    return redirect('LisPro')
+
+def lista_productos(request):
+    productos = Producto.objects.all()
+    context = {'productos': productos}
+    return render(request, 'Crud/Lista_productos.html', context)
