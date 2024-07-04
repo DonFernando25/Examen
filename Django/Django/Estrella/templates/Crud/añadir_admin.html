@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Admin</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    {% include 'base/hadmin.html' %}<br>
+
+    <main class="container mt-5">
+        <h1 class="text-center">Registro Admin</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </main>
+    {% include 'base/footer.html' %}
+</body>
+</html>

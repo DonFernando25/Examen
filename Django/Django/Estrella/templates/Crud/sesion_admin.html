@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>★Inicio de Sesión Usuario★</title>
+    <title>Inicio de Sesión Admin</title>
     {% load static %}
     <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    {% include 'base/header.html' %}
+    {% include 'base/hadmin.html' %}
     <main class="container mt-5">
-        <h1 class="text-center">Inicio de Sesión</h1><br>
+        <h1 class="text-center">Inicio de Sesión Admin</h1><br>
         {% if error %}
             <div class="alert alert-danger">{{ error }}</div>
         {% endif %}
@@ -37,17 +37,15 @@
             </div>
         </div>
 
-        <div class="elementor-widget-container"> 
+        <div class="elementor-widget-container">
             <div class="row justify-content-center">
-                <div class="col-md-12"> 
-                    <div style="background-color: ; border-radius: px; padding: 150px;"> 
+                <div class="col-md-12">
+                    <div style="background-color: ; border-radius: px; padding: 150px;">
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
-    
     {% include 'base/footer.html' %}
 </body>
 </html>

@@ -24,7 +24,7 @@ class Usuario(models.Model):
     contrasena = models.CharField(max_length=30)
     fecha_nacimiento = models.DateField()
     genero = models.CharField(max_length=1, choices=GENERO_CHOICES)
-    
+
     def __str__(self):
         return f"{self.nombre} {self.apellido} ({self.nombre_usuario})"
     
@@ -46,3 +46,14 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+
+
+class Admin(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombre_usuario = models.CharField(max_length=20, unique=True)
+    correo = models.EmailField(max_length=100, unique=True)
+    contrasena = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.nombre_usuario

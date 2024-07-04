@@ -25,4 +25,12 @@ urlpatterns = [
     path('editar_producto/<str:pk>/', views.editar_producto, name='editar_producto'),
     path('Eliminar_Producto/<str:pk>/', views.producto_eliminar, name='prod_del'),
     path('LisPro', views.lista_productos, name='LisPro'),
+    path('ReAd', views.añadir_admin, name='ReAd'),
+    path("IniAd", views.inicio_sesion_admin, name="IniAd"),
+    path('Perfil', views.perfil, name='Perfil'),
+    path('logout', views.logout, name='logout'),
+    path('logadm', views.logadm, name='logadm'),
+    path('LisAdm', views.lista_admins, name='LisAdm'),
+    path('editar_admin/<int:pk>/', views.editar_admin, name='editar_admin'),
+    path('eliminar_admin/<int:pk>/', views.eliminar_admin, name='eliminar_admin'),
 ]

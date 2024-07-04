@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Administrador</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'base/hadmin.html' %}
+    <main>
+        <div class="container mt-5">
+            <h1 class="text-center">Editar Administrador</h1><br>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="nombre_usuario">Nombre de Usuario</label>
+                    <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" value="{{ admin.nombre_usuario }}" required>
+                </div><br>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" value="{{ admin.correo }}" required>
+                </div><br>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" value="{{ admin.contrasena }}" required>
+                </div><br>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <a href="{% url 'lista_admins' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </main><br>
+    {% include 'base/footer.html' %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

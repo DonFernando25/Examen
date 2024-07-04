@@ -124,3 +124,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_URL = 'IniSe'
+LOGIN_REDIRECT_URL = 'Perfil' 
+LOGOUT_REDIRECT_URL = 'IniSe'
+
+CSRF_COOKIE_SECURE = False  
+SESSION_COOKIE_SECURE = False  
+CSRF_USE_SESSIONS = True

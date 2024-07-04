@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★Perfil de Usuario★</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/estrella.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    {% include 'base/header.html' %}
+
+    <main>
+        <div class="container mt-5">
+            <h1 class="text-center">Perfil de Usuario</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Información del Usuario</h5>
+                            <p class="card-text"><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+                            <p class="card-text"><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+                            <p class="card-text"><strong>Nombre de Usuario:</strong> {{ usuario.nombre_usuario }}</p>
+                            <p class="card-text"><strong>Correo Electrónico:</strong> {{ usuario.correo }}</p>
+                            <p class="card-text"><strong>Fecha de Nacimiento:</strong> {{ usuario.fecha_nacimiento }}</p>
+                            <p class="card-text"><strong>Género:</strong> {{ usuario.get_genero_display }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+    </main><br>
+
+    {% include 'base/footer.html' %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
